@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Universal IR Remote</string>
+    <string name="status_no_service">This phone does not expose Android's Consumer IR service.</string>
+    <string name="status_no_emitter">IR service is present, but the handset does not report a working IR blaster.</string>
+    <string name="status_ready">IR blaster detected. Pick a preset, point the top of the phone at the appliance, and test the controls.</string>
+    <string name="error_no_ir">No IR blaster is available on this phone.</string>
+    <string name="error_frequency">Enter a valid carrier frequency between 30000 and 60000 Hz.</string>
+    <string name="error_protocol">Choose a supported protocol first.</string>
+    <string name="error_command">Enter a valid hex command.</string>
+</resources>
