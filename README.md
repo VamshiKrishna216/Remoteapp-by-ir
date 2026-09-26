@@ -1,12 +1,38 @@
-# VW Smart TV IR Remote APK
+# VW Smart TV IR Remote
 
-A minimal Android app for phones with an IR blaster. It targets VW Smart TV models such as **VW32C3**, **VW24C3**, and **VW43S1** with a preset button layout inspired by common non-voice K2-style remotes.
+A lightweight Android app that turns compatible phones with an infrared blaster into a remote control for supported VW Smart TV models.
 
 ## Features
 
-- IR remote UI with power, home, menu, source, navigation, volume, mute, and channel buttons.
-- Uses Android's `ConsumerIrManager` to send NEC-style infrared frames.
-- Lets you edit the carrier frequency and device address if your TV needs a different preset.
+- Power, Home, Menu, Source and navigation controls
+- Volume, mute and channel controls
+- Configurable carrier frequency
+- Configurable device address
+- NEC-style infrared transmission
+- Simple remote-focused Android UI
+
+## Tech stack
+
+- Kotlin
+- Android SDK
+- Android `ConsumerIrManager`
+- View Binding
+- Material Components
+- Gradle
+
+## Architecture
+
+```text
+User action
+    ↓
+Android UI
+    ↓
+ConsumerIrManager
+    ↓
+IR carrier + command
+    ↓
+VW Smart TV
+```
 
 ## Build
 
@@ -14,13 +40,24 @@ A minimal Android app for phones with an IR blaster. It targets VW Smart TV mode
 ./gradlew assembleDebug
 ```
 
-The generated APK will be at:
+APK output:
 
 ```text
 app/build/outputs/apk/debug/app-debug.apk
 ```
 
-## Notes
+## Compatibility
 
-- Your Android phone **must** have a hardware IR blaster.
-- The default profile uses a common NEC-style TV address (`0x20DF`) and common TV command values. If your specific VW TV responds to a different address, edit the field inside the app and test again.
+The phone must have a **hardware IR blaster**. The app was designed around supported VW Smart TV profiles such as VW32C3, VW24C3 and VW43S1.
+
+## Why I built it
+
+A small hardware-integrated project exploring how Android applications can interact with physical devices through infrared communication.
+
+## Future improvements
+
+- Multiple TV profiles
+- Saved remote presets
+- Automatic device/profile detection
+- Haptic feedback
+- UI customization
